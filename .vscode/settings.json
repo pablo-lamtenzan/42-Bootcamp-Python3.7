@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/home/user42/Miniconda3/envs/bootcamp/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": true
+}
