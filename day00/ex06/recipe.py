@@ -24,12 +24,13 @@ def print_recipe(recipe):
 
 # where are the fcking error ? when i del and then i print ?
 def delete_recipe(recipe):
-    del cookbook[recipe]['incredients']
+    del cookbook[recipe].pop['incredients']
 # probally not have to del incretients but just its members
 
 
 def add_recipe(recipe):
     cookbook[recipe] = recipe
+
 
 delete_recipe('cake')
 #print_recipe('cake')
