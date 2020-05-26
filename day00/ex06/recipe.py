@@ -1,10 +1,10 @@
 cookbook = {'sandwich': {'incredients': ['ham', 'bread', 'cheese', 'tomatoes'],
             'meal': 'lunch', 'prep_time': '10'},
             'cake': {'incredients': ['flour', 'sugar', 'eggs'],
-            'meal': 'dessert', 'prep_time': '60'},
+                     'meal': 'dessert', 'prep_time': '60'},
             'salad': {'incredients': ['avocado', 'arugula', 'tomatoes',
-            'spinash'],
-            'meal': 'lunch', 'prep_time': '15'}
+                                      'spinash'],
+                      'meal': 'lunch', 'prep_time': '15'}
             }
 
 
@@ -20,7 +20,7 @@ def print_recipe(recipe):
     except ValueError:
         print("Unespected Error while printing")
     return
-    
+
 
 def delete_recipe(recipe):
     if recipe not in cookbook:
@@ -32,12 +32,12 @@ def delete_recipe(recipe):
     except ValueError:
         print("Unespected Error while printing")
     return
-        
+
 
 def add_recipe(name, incredients, meal, prep_time):
     if name not in cookbook:
         cookbook[name] = {'incredients': incredients,
-            'meal': meal, 'prep_time': prep_time}
+                          'meal': meal, 'prep_time': prep_time}
         print("Recipe %s added with succes!\n" % name)
     else:
         print("Recipe is alreaddy in the cookbook")
@@ -100,9 +100,7 @@ while n != 5:
     elif n == 4:
         print_all_recipes_names()
     elif n == -1:
-        print("\nThis option does not exist, please type the corresponding number.")
+        print("\nThis option does not exist, please type the \
+            corresponding number.")
     print_menu()
     n = parse()
-
-# careful with format {} in incredients
-# can t add stuff

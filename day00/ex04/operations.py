@@ -38,4 +38,3 @@ if (x == 2):
 else:
     print("InputError: only numbers\n")
     print("Usage: python operations.py <number1> <number2>")
-

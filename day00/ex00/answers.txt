@@ -1,0 +1,34 @@
+1) et 2)
+
+certifi     2020.4.5.1         
+numpy       1.18.4             
+pip         20.0.2             
+pycodestyle 2.5.0              
+setuptools  46.4.0.post20200518
+wheel       0.34.2        
+
+3)
+
+Name: numpy
+Version: 1.18.4
+Summary: NumPy is the fundamental package for array computing with Python.
+Home-page: https://www.numpy.org
+Author: Travis E. Oliphant et al.
+Author-email: None
+License: BSD
+Location: /home/user42/Miniconda3/envs/bootcamp/lib/python3.7/site-packages
+Requires: 
+Required-by: 
+
+4) 
+
+Name: numpy
+Version: 1.18.4
+Summary: NumPy is the fundamental package for array computing with Python.
+Home-page: https://www.numpy.org
+Author: Travis E. Oliphant et al.
+Author-email: None
+License: BSD
+Location: /home/user42/Miniconda3/envs/bootcamp/lib/python3.7/site-packages
+Requires: 
+Required-by: 

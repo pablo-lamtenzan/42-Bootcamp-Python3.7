@@ -1,10 +1,3 @@
 t = (0, 4, 132.42222, 10000, 12345.67)
-print("day_", end='')
-print(t[0] if len(str(t[0])) == 2 else "0" + str(t[0]), end='')
-print(", ex_", end='')
-print(t[1] if len(str(t[1])) == 2 else "0" + str(t[1]), end='')
-print(" : ", end='')
-print(round(t[2], 2), end='')
-print(",%s" % format(t[3], " 10.2e"), end='')
-print(",%s" % format(t[4], " 10.2e"),  end='')
-# have to correct the extra spaces printed by format()
+
+print(f"day_{t[0]:0>2}, ex_{t[1]:0>2}, {t[3]:.2f}, {t[4]:.2e}, {t[4]:.2e}")

@@ -16,13 +16,15 @@ def parse():
 
 
 print("This is an interactive guessing game!")
-print("You have to enter a number between 1 and 99 to find out the secret number.")
+print("You have to enter a number between 1 and 99 to find out the \
+    secret number.")
 print("Type 'exit' to end the game.")
 print("Good luck!")
 
 to_guess = random.randint(1, 99)
 if to_guess == 42:
-    success_msg = "The answer to the ultimate question of life, the universe and everything is 42.\nCongratulations! You got it on your first try!"
+    success_msg = "The answer to the ultimate question of life, the universe \
+        and everything is 42.\nCongratulations! You got it on your first try!"
 else:
     success_msg = "Congratulations, you've got it!"
 
