@@ -10,11 +10,12 @@ morse = {'A': '.-', 'B': '-...',
                     '1': '.----', '2': '..---', '3': '...--',
                     '4': '....-', '5': '.....', '6': '-....',
                     '7': '--...', '8': '---..', '9': '----.'
-                    }
+        }
 
 
 def encrypt(text):
     res = ''
+    text = text.upper()
     for byte in text:
         if byte != ' ':
             res += morse[byte] + ' '
@@ -23,5 +24,5 @@ def encrypt(text):
     return res
 
 # have to add lowercases and is end
-test = "ABVCVVI"
+test = "ABVCVVIaaaaaaaaaaa42352"
 print(encrypt(test))

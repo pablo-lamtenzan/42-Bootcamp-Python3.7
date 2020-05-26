@@ -1,5 +1,5 @@
 import sys
-# import numpy
+import numpy
 
 
 class Vector:

@@ -42,7 +42,6 @@ while n != to_guess:
         print("Too high!")
     if n == -1:
         print("That's not a number.")
-        continue
     n = parse()
 print(success_msg)
 print("You won in %d attempts!" % i)
