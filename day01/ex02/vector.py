@@ -35,15 +35,16 @@ class Vector:
     def __add__(self, other):
         i = 0
         len = self.size if self.size < other.size else other.size
-        res = [0.0, 0.1, 0.2]
-        # res = numpy.zeros(len)
+        res = []
+        for i in range(len):
+            res.append(0)
         while i < len:
             res[i] = self.values[i] + other.values[i]
             i += 1
         return Vector(res)
 
     def __radd__(self, other):
-        if other.size = 0:
+        if other.size == 0:
             return self
         else:
             return self.__add__(other)
@@ -51,15 +52,16 @@ class Vector:
     def __sub__(self, other):
         i = 0
         len = self.size if self.size < other.size else other.size
-        res = [0.0, 0.1, 0.2]
-        # res = numpy.zeros(len)
+        res = []
+        for i in range(len):
+            res.append(0)
         while i < len:
             res[i] = self.values[i] - other.values[i]
             i += 1
         return Vector(res)
 
     def __rsub__(self, other):
-        if other.size = 0:
+        if other.size == 0:
             return self
         else:
             return self.__sub__(other)
@@ -67,15 +69,16 @@ class Vector:
     def __truediv__(self, other):
         i = 0
         len = self.size if self.size < other.size else other.size
-        res = [0.0, 0.1, 0.2]
-        # res = numpy.zeros(len)
+        res = []
+        for i in range(len):
+            res.append(0)
         while i < len:
             res[i] = self.values[i] / other.values[i]
             i += 1
         return Vector(res)
 
     def __rtruediv__(self, other):
-        if other.size = 0:
+        if other.size == 0:
             return self
         else:
             return self.__truediv__(other)
@@ -83,15 +86,16 @@ class Vector:
     def __mul__(self, other):
         i = 0
         len = self.size if self.size < other.size else other.size
-        res = [0.0, 0.1, 0.2]
-        # res = numpy.zeros(len)
+        res = []
+        for i in range(len):
+            res.append(0)
         while i < len:
             res[i] = self.values[i] * other.values[i]
             i += 1
         return Vector(res)
 
     def __rmul__(self, other):
-        if self.size = 0:
+        if self.size == 0:
             return self
         else:
             return self.__mul__(other)
