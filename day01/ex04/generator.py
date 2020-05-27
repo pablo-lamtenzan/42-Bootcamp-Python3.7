@@ -33,7 +33,6 @@ def generator(text, sep=" ", option=None):
 
 # check the 3 options
 
-            
 
 
 
