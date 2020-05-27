@@ -1,11 +1,13 @@
 class Recipe:
-    def __init__(self, name="", cooking_1v1="0", cooking_time="0", ingredients="", description="", recipe_type="start"):
+    def __init__(self, name=None, cooking_1v1=None, cooking_time=None,
+                 incredients=[], description=None, recipe_type=None):
         if isinstance(name, str):
             self.name = name
         else:
             print("Bad format in name")
             exit()
-        if isinstance(cooking_1v1, int) and cooking_1v1 >= 1 and cooking_1v1 <= 5:
+        if isinstance(cooking_1v1, int) and cooking_1v1 >= 1 and \
+           cooking_1v1 <= 5:
             self.cooking_1v1 = cooking_1v1
         else:
             print("Bad format in cooking 1v1")
@@ -15,7 +17,7 @@ class Recipe:
         else:
             print("Bad format in cooking time")
             exit()
-        if isinstance(ingredients, list):
+        if isinstance(incredients, list):
             self.incredients = incredients
         else:
             print("Bad format in incredients")
@@ -25,23 +27,22 @@ class Recipe:
         else:
             print("Bad format in description")
             exit()
-        if isinstance(recipe_type, str) and (recipe_type == "starter" or recipe_type == "lunch" or recipe_type == "dessert"):
+        if isinstance(recipe_type, str) and (recipe_type == "starter" or
+           recipe_type == "lunch" or recipe_type == "dessert"):
             self.recipe_type = recipe_type
         else:
             print("Bad format in recipe type")
             exit()
 
-    # do i 1 line
     def __str__(self):
-        ret = "Name is " + self.name
-        ret += "Cooking_1vs1 is " + self.cooking_1v1
-        ret += "Cooking time is " + self.cooking_time
-        ret += "Incredients are:"
+        txt = "Name is " + self.name + '\n' + "Cooking_1vs1 is " + \
+         str(self.cooking_1v1) + '\n' + "Cooking time is " + \
+         str(self.cooking_time) + '\n' + "Incredients are:\n"
         for i in self.incredients:
-            "- " + ret += i
+            txt += i + '\n'
         if not self.description:
-            ret += "No description for this recipe"
+            txt += "No description for this recipe" + '\n'
         else:
-            ret += "Description is " + self.description
-        ret += "Recipe type" + self.recipe_type
-        return ret
+            txt += "Description is " + self.description + '\n'
+        txt += "Recipe type is " + self.recipe_type
+        return txt

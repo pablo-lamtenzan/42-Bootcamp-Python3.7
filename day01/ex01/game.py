@@ -16,4 +16,9 @@ class Stark(GotCharacter):
     def die(self):
         self.is_alive = False
 
-# lazy stuff i ve understood yet
+
+arya = Stark("Arya")
+print(arya.__dict__)
+arya.print_house_words()
+arya.die()
+print(arya.is_alive)

@@ -2,8 +2,8 @@
 
 class Evaluator:
     def __init__(self):
-        return
-    
+        pass
+
     def zip_evaluate(self, coefs, words):
         if len(coefs) != len(words):
             print("-1")
@@ -19,8 +19,8 @@ class Evaluator:
             print("-1")
             return -1
         ret = 0
-        for i, (a, b) in enumerate(zip(coefs, words)):
-            ret += len(b) * a
+        for a, b in enumerate(words):
+            ret += len(b) * coefs[a]
         print(ret)
         return (ret)
 
