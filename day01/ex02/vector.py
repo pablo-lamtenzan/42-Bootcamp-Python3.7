@@ -1,5 +1,4 @@
 import sys
-import numpy
 
 
 class Vector:
@@ -88,7 +87,7 @@ class Vector:
         len = self.size if self.size < other.size else other.size
         res = []
         for i in range(len):
-            res.append(0)
+            res.append(0.0)
         while i < len:
             res[i] = self.values[i] * other.values[i]
             i += 1
@@ -104,7 +103,7 @@ class Vector:
         return "Values: %s, Size %i" % (self.values, self.size)
 
     def __repr__(self):
-        return {'values': self.values, 'age': self.size}
+        return {'values': self.values, 'size': self.size}
 
 
 x = Vector((3))

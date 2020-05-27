@@ -31,6 +31,7 @@ class Recipe:
             print("Bad format in recipe type")
             exit()
 
+    # do i 1 line
     def __str__(self):
         ret = "Name is " + self.name
         ret += "Cooking_1vs1 is " + self.cooking_1v1
