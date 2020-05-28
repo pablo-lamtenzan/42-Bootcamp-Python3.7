@@ -29,29 +29,25 @@ class TinyStatistician:
     def quartile(self, x, percentile):
         if len(x) == 0:
             return None
-        indice = []
         n = len(x)
         x = sorted(x)
-
-        if n % 2 == 0:
-            indice.append((n // 2) - 1)
-            indice.append(n // 2)
-        else:
-            indice.append(n // 2)
-        median = self.median(x)
         if percentile == 25:
-            return self.median(x[:indice[0]])
-        if percentile == 75:
-            return self.median(x[indice[-1] + 1:])
-        # have to test it better is weird
+            mid = n // 4
+        else:
+            mid = n // 4 + n // 2
+        if n % 2 == 0:
+            midle = (x[mid] + x[mid - 1]) / 2
+        else:
+            midle = x[mid]
+        return midle
 
     def var(self, x):
-        if len(x)n == 0:
+        if len(x) == 0:
             return None
         s = 0
-        for i in range x:
+        for i in x:
             s += pow(i - self.mean(x), 2)
-        return s / (len(x) - 1)
+        return s / len(x)
 
     def std(self, x):
         if len(x) == 0:
