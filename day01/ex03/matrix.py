@@ -1,8 +1,13 @@
 import sys
+from vector import Vector
 
 
 class Matrix:
     def __init__(self, *args, **kwargs):
+        self.data = []
+        self.shape = ()
+        if args is None:
+            exit()
         if (len(args) == 1):
             one_arg = True
             a1 = args[0]
@@ -28,10 +33,12 @@ class Matrix:
         elif isinstance(args[0], list) and isinstance(args[1], tuple):
             self.data = args[0]
             self.shape = args[1]
-    
+
     def __add__(self, other):
-        new = Matrix(self.data, self.shape)
+        if self.shape != other.shape:
+            return self
         # check if other object is Matrix too
+        new = Matrix(self.data, self.shape)
         if isinstance(other, Matrix):
             for i in range(self.shape[0]):
                 for j in range(self.shape[1]):
@@ -40,13 +47,15 @@ class Matrix:
         elif isinstance(other, (int, float)):
             for i in range(self.shape[0]):
                 for j in range(self.shape[1]):
-                    new.data[i][j] = self.data[i][j] + other
+                    new.data[i][j] = self.data[i][j] + other.data[i][j]
         return new
-    
+
     def __radd__(self, other):
         return self.__add__(other)
 
     def __sub__(self, other):
+        if self.shape != other.shape:
+            return self
         new = Matrix(self.data, self.shape)
         # check if other object is Matrix too
         if isinstance(other, Matrix):
@@ -64,6 +73,9 @@ class Matrix:
         return self.__sub__(other)
 
     def __mul__(self, other):
+        if isinstance(other, Matrix):
+            if self.shape != other.shape:
+                return self
         new = Matrix(self.data, self.shape)
         # check if other object is Matrix too
         if isinstance(other, Matrix):
@@ -75,12 +87,20 @@ class Matrix:
             for i in range(self.shape[0]):
                 for j in range(self.shape[1]):
                     new.data[i][j] = self.data[i][j] * other
+        elif isinstance(other, Vector):
+            if other.size != self.shape[1]:
+                return self
+            for i in range(self.shape[0]):
+                for j in range(self.shape[1]):
+                    new.data[i][j] = self.data[i][j] * other.values[i]
         return new
 
     def __rmul__(self, other):
         return self.__mul__(other)
 
     def __truediv__(self, other):
+        if self.shape != other.shape:
+            return self
         new = Matrix(self.data, self.shape)
         # check if other object is Matrix too
         if isinstance(other, Matrix):
@@ -103,11 +123,3 @@ class Matrix:
 
     def __repr__(self):
         return {}
-
-
-x = Matrix((2, 3))
-y = Matrix((2, 3))
-z = x.__add__(2.0)
-z.__str__()
-#print(z.data)
-#print(z.shape)

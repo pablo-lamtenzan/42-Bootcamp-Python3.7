@@ -33,7 +33,7 @@ class Book:
                         print(y)
                         return (z)
         print("No recipe with name %s founded" % name)
-    
+
     def get_recipe_by_type(self, recipe_type):
         ret = self.recipe_list[recipe_type]
         return ret
