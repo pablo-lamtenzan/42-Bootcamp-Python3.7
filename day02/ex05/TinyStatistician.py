@@ -5,7 +5,7 @@ class TinyStatistician:
     def __init__(self):
         pass
 
-    def mean(x):
+    def mean(self, x):
         if len(x) == 0:
             return None
         n = len(x)
@@ -14,7 +14,7 @@ class TinyStatistician:
             array_dot += i
         return array_dot / n
 
-    def median(x):
+    def median(self, x):
         if len(x) == 0:
             return None
         n = len(x)
@@ -26,7 +26,7 @@ class TinyStatistician:
             midle = x[mid]
         return midle
 
-    def quartile(x, percentile):
+    def quartile(self, x, percentile):
         if len(x) == 0:
             return None
         indice = []
@@ -45,7 +45,7 @@ class TinyStatistician:
             return self.median(x[indice[-1] + 1:])
         # have to test it better is weird
 
-    def var(x):
+    def var(self, x):
         if len(x)n == 0:
             return None
         s = 0
@@ -53,7 +53,7 @@ class TinyStatistician:
             s += pow(i - self.mean(x), 2)
         return s / (len(x) - 1)
 
-    def std(x):
+    def std(self, x):
         if len(x) == 0:
             return None
         return math.sqrt(self.var(x))
