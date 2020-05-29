@@ -14,20 +14,27 @@ class ScrapBooker:
         y, x = dimensions
         startx = x
         starty = 0
-        return array[starty:starty + pos[0], startx:startx + pos[1]]
-        # check it
+        return array[starty:starty + position[0], startx:startx + position[1]]
 
     @staticmethod
-    def thin(array, n, axis):
-        np.delete(array, n, axis=axis)
-        # all to test n is a slice
+    def thin(array, n, axis=0):
+        if axis == 1:
+            axis = 0
+        else:
+            axis = 1
+        return np.delete(array, slice(n - 1, None, n), axis=axis)
 
     @staticmethod
-    def juxtapose(array, n, axis):
-        return np.repeat(array, n, axis=axis)
-        # np.concatenate
+    def juxtapose(array, n, axis=0):
+        return np.concatenate([array] * n, axis=axis)
 
-    @staticmethod
+    @staticmethod  # dim == tupple
     def mosaic(array, dimensions):
-        return np.repeat(array[:, :, np.newaxis], dimensions, axis=2)
-        # np.tile
+        return np.tile(array, dimensions)
+
+
+array = np.array([list("ABCDEFGHIJKL") for i in range(10)])
+Sc = ScrapBooker()
+ret = Sc.crop(array, (3, 3), position=(3, 3))
+print(ret)
+print(array)

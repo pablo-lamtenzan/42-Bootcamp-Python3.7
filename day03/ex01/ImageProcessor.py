@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import numpy as np
 
 
 class ImageProcessor:
@@ -16,3 +17,9 @@ class ImageProcessor:
     def display(array):
         plt.imshow(array)
         plt.show()
+
+
+Im = ImageProcessor()
+ret = Im.load("42AI.png")
+print(ret)
+Im.display(ret)
