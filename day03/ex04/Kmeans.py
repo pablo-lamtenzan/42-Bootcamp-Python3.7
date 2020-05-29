@@ -5,13 +5,13 @@ from matplotlib import pyplot as plt
 
 
 class KmeansClustering:
-    def __init__(self, max_iter=1, ncentroid=5):
+    def __init__(self, max_iter=20, ncentroid=5):
         self.ncentroid = ncentroid
         self.max_iter = max_iter
         self.centroides = []
 
     def fit(self, X):
-        self.centroides = np.array([]).reshape(2, 0)  # 2 = 3
+        self.centroides = np.array([]).reshape(3, 0)
         for i in range(self.ncentroid):
             rand = rd.randint(0, len(X) - 1)
             self.centroides = np.c_[self.centroides, X[rand]]
@@ -27,7 +27,7 @@ class KmeansClustering:
             dtmp = {}
             # init the tmp array
             for k in range(self.ncentroid):
-                dtmp[k + 1] = np.array([]).reshape(2, 0)
+                dtmp[k + 1] = np.array([]).reshape(3, 0)
             # regroup the data points based of the index of the min distances
             for i in range(len(X)):
                 dtmp[min_dist_index[i]] = np.c_[dtmp[min_dist_index[i]], X[i]]
@@ -62,7 +62,7 @@ class KmeansClustering:
 dataset = pd.read_csv('system_census.csv')
 dataset.describe()
 
-X = dataset.iloc[:, [1, 2]].values
+X = dataset.iloc[:, [1, 2, 3]].values
 
 Kmeans = KmeansClustering()
 
