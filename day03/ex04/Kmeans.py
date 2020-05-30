@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 
 class KmeansClustering:
-    def __init__(self, max_iter=20, ncentroid=5):
+    def __init__(self, max_iter=1, ncentroid=5):
         self.ncentroid = ncentroid
         self.max_iter = max_iter
         self.centroides = []
@@ -62,6 +62,7 @@ class KmeansClustering:
 dataset = pd.read_csv('system_census.csv')
 dataset.describe()
 
+# slice notation returns and 90º
 X = dataset.iloc[:, [1, 2, 3]].values
 
 Kmeans = KmeansClustering()
